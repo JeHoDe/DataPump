@@ -1,0 +1,11 @@
+*.csproj.user
+obj/
+packages/*
+Bin/*
+bin/*
+*.ncb
+*.suo
+*.msi
+*.sdf
+*.opensdf
+setup.exe

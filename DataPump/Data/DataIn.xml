@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<datapump>
+  <tables>
+    <!--
+      table attributes
+      
+      name:       
+      database table name (mandatory)
+      rows:       number of rows to extract or write (mandatory on input file: * or missing attribute means all rows)
+      query:      custom query (@fk gets replaced with the parent id)
+      pk:         primary key name (default is ID)
+      fk:         foreign key name (default is parent table name + "_ID")
+      identity:   query to retreive the id of a new record (default is select max(id) from table)
+    -->
+    <table name="CREDENTIAL" rows="1000000" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='CREDENTIAL'">
+      <table name="PROFILE" rows="1" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='PROFILE'">
+        <table name="MOBILE_DEVICE" rows="1" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='MOBILE_DEVICE'"/>
+        <table name="SERVICE" rows="1" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='SERVICE'"/>
+        <table name="POINT" rows="1" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='POINT'"/>
+      </table>
+    </table>
+  </tables>
+</datapump>

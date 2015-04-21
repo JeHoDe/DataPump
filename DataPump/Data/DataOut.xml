@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<datapump>
+  <dump>
+    <!-- Extracted table data goes here -->
+  </dump>
+  <tables>
+    <table name="CREDENTIAL" rows="1000000"  identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='CREDENTIAL'">
+      <table name="PROFILE" rows="*" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='PROFILE'">
+        <table name="MOBILE_DEVICE" rows="*" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='MOBILE_DEVICE'"/>
+        <table name="SERVICE" rows="*" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='SERVICE'"/>
+        <table name="POINT" rows="*" identity="SELECT CURRENT_VALUE-1 FROM TABLE_KEYS WHERE TABLE_NAME='POINT'"/>
+      </table>
+    </table>
+  </tables>
+</datapump>
